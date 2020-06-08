@@ -32,13 +32,13 @@ protoc --cpp_out=. emitvalues/sawzall.proto
 
 ## Remove Build Errors
 
-Open configure.ac, find the line which contains
+Open `configure.ac`, find the line which contains
 
 ```make
 WARN_FLAGS="-Wall -Wwrite-strings -Woverloaded-virtual -Wno-sign-compare"
 ```
 
-Add `-Wno-unused-local-typedefs` after exist flags.
+Add `-Wno-unused-local-typedefs` after the existed flags.
 
 ## Fix Build Warnings
 
@@ -46,7 +46,7 @@ Add `-Wno-unused-local-typedefs` after exist flags.
 - In `src/utilities/gzipwrapper.cc`, add `unsigned` to the type of `const char magic[]`
 - in `src/engine/code.cc` and `src/utilities/random_base.cc`, add `#include <unistd.h>`
 - in `src/engine/form.cc`, Change some `return false;`s to `return NULL;`
-- In `src/protoc_plugin/szl_generator.h`, add missing 'std::' prefix to some places before `set`, `map`, and `string`.
+- In `src/protoc_plugin/szl_generator.h`, add missing `std::` prefix to some places before `set`, `map`, and `string`.
 
 ## Fix Warnings
 
