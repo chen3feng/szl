@@ -1,7 +1,7 @@
 Szl - An implementation of Google's Sawzall language for
 statistical aggregation of log data.
 Copyright 2010 Google Inc.
-http://code.google.com/szl
+https://github.com/google/szl
 
 C++ Installation - Unix
 =======================
@@ -40,7 +40,7 @@ Usage
 The documentation for Szl and the Sawzall language is available via the
 web at:
 
-  http://code.google.com/szl/
+  https://code.google.com/archive/p/szl/wikis
 
 Refurbishment
 =============
