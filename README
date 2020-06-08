@@ -41,3 +41,12 @@ The documentation for Szl and the Sawzall language is available via the
 web at:
 
   http://code.google.com/szl/
+
+Remastering
+===========
+
+This library is quite old for modern C++ compiler, and looks being unmaintained
+for long time.
+
+I've fixed some warnings and errors for it in this personal fork.
+See [fix-build.md](fix-build.md) for details.
