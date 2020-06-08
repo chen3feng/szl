@@ -24,7 +24,7 @@ AC_MSG_CHECKING([C++ compiler flags...])
 AS_IF([test "x${ac_cv_env_CXXFLAGS_set}" = "x"],[
   AS_IF([test "$GCC" = "yes"],[
     SZL_OPT_FLAG="-O2 -fno-strict-aliasing"
-    WARN_FLAGS="-Wall -Wwrite-strings -Woverloaded-virtual -Wno-sign-compare"
+    WARN_FLAGS="-Wall -Wwrite-strings -Woverloaded-virtual -Wno-sign-compare -Wno-unused-local-typedefs"
     CXXFLAGS="${CXXFLAGS} -g ${WARN_FLAGS}"
   ])
 
@@ -45,12 +45,12 @@ SZL_EXTRA_LDFLAGS="";
 AX_CHECK_LINKER_FLAGS([-Wl,--no-as-needed],
         [SZL_EXTRA_LDFLAGS="-Wl,--no-as-needed"], [])
 AC_SUBST([SZL_EXTRA_LDFLAGS])
- 
+
 
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
 AC_PROG_INSTALL
-AC_PROG_LIBTOOL 
+AC_PROG_LIBTOOL
 
 # Set up defines for endianness.
 szl_big_endian=1

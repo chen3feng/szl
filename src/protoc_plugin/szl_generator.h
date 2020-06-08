@@ -1,11 +1,11 @@
 // Copyright 2010 Google Inc.
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 //      http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,7 +38,7 @@ namespace szl {
 
 // Set of enums for which the type name was renamed by appending an
 // underscore because it matched a field or enum value name.
-typedef set<const EnumDescriptor*> RenamedEnums;
+typedef std::set<const EnumDescriptor*> RenamedEnums;
 
 // CodeGenerator implementation for generated Sawzall protocol buffer classes.
 // If you create your own protocol compiler binary and you want it to support
@@ -70,12 +70,12 @@ class SzlGenerator : public compiler::CodeGenerator {
       const Descriptor& enum_descriptor, RenamedEnums* renamed_enums) const;
   void PrintEnum(
       const EnumDescriptor& enum_descriptor,
-      const set<string> nontype_names,
+      const std::set<std::string> nontype_names,
       RenamedEnums* renamed_enums) const;
   void PrintEnumValueMap(
       const EnumDescriptor& enum_descriptor, const string& map_name) const;
   void CollectLocalNames(
-      const Descriptor& descriptor, set<string>* nontype_names) const;
+      const Descriptor& descriptor, std::set<std::string>* nontype_names) const;
 
   void PrintMessages() const;
   void PrintMessage(const Descriptor& message_descriptor, int depth) const;
@@ -89,7 +89,7 @@ class SzlGenerator : public compiler::CodeGenerator {
   void PrintTags(const Descriptor& descriptor) const;
 
   void GetTagNameMapping(
-      const FieldDescriptor& field, int* max_tag, map<int, string>* tag_mapping)
+      const FieldDescriptor& field, int* max_tag, std::map<int, std::string>* tag_mapping)
       const;
 
   void PrintFields(

@@ -1,11 +1,11 @@
 // Copyright 2010 Google Inc.
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 //      http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -802,7 +802,7 @@ bool ArrayForm::IsEqual(Val* v1, Val* v2) const {
 Val* ArrayForm::Cmp(Val* v1, Val* v2) const {
   assert(v1->is_array());
   if (!v2->is_array())
-    return false;
+    return NULL;
   ArrayVal* a1 = v1->as_array();
   ArrayVal* a2 = v2->as_array();
   assert(a1->type()->IsEqual(a2->type(), false));  // ignore proto info
@@ -1076,7 +1076,7 @@ bool TupleForm::IsEqual(Val* v1, Val* v2) const {
 Val* TupleForm::Cmp(Val* v1, Val* v2) const {
   assert(v1->is_tuple());
   if (!v2->is_tuple())
-    return false;
+    return NULL;
   TupleVal* t1 = v1->as_tuple();
   TupleVal* t2 = v2->as_tuple();
   assert(t1->type()->IsEqual(t2->type(), false));  // ignore proto info

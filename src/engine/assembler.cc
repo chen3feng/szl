@@ -1,11 +1,11 @@
 // Copyright 2010 Google Inc.
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 //      http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -60,14 +60,14 @@ namespace sawzall {
 
 
 // Maps register addressing mode to register encoding
-static const int8 reg_encoding[AM_R15 + 1] = {
+static const uint8 reg_encoding[AM_R15 + 1] = {
   0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
   0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
 };
 
 
 // Maps register addressing mode to register encoding shifted left three bits
-static const int8 reg3_encoding[AM_R15 + 1] = {
+static const uint8 reg3_encoding[AM_R15 + 1] = {
   0x00, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38,
   0x00, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38,
 };
@@ -78,7 +78,7 @@ static const int8 reg3_encoding[AM_R15 + 1] = {
 // 0xFF means illegal addressing mode
 // see Intel Vol. 2A, 2.2.1.2, p 2-13
 // see AMD Vol. 3, 1.2.7, p 19
-static const int8 mod_rm[AM_LAST + 1] = {
+static const uint8 mod_rm[AM_LAST + 1] = {
 
 // EAX   ECX   EDX   EBX   ESP   EBP   ESI   EDI
 //  R8    R9   R10   R11   R12   R13   R14   R15
@@ -151,7 +151,7 @@ static const int8 mod_rm[AM_LAST + 1] = {
 // bits: (scale:2) index:3 base:3
 // 0x80 means no SIB byte
 // 0xFF means illegal addressing mode
-static const int8 sib[AM_LAST + 1] = {
+static const uint8 sib[AM_LAST + 1] = {
 
 // EAX   ECX   EDX   EBX   ESP   EBP   ESI   EDI
 //  R8    R9   R10   R11   R12   R13   R14   R15
@@ -222,7 +222,7 @@ static const int8 sib[AM_LAST + 1] = {
 
 // Addressing mode encoding table containing the low 2 bits of the REX prefix
 // 0xFF means illegal addressing mode
-static const int8 rex_xb[AM_LAST + 1] = {
+static const uint8 rex_xb[AM_LAST + 1] = {
 
 // EAX   ECX   EDX   EBX   ESP   EBP   ESI   EDI
 //  R8    R9   R10   R11   R12   R13   R14   R15
