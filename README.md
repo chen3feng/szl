@@ -42,8 +42,8 @@ web at:
 
   http://code.google.com/szl/
 
-Remastering
-===========
+Refurbishment
+=============
 
 This library is quite old for modern C++ compiler, and looks being unmaintained
 for long time.
