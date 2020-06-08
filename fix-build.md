@@ -69,4 +69,4 @@ TODO
 
 There are many test error to be fixed.
 
-You can find them just by runnins the `make check` command.
+You can find them just by running the `make check` command.
